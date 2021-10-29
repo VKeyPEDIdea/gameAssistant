@@ -1,9 +1,11 @@
 import React from "react";
+import BuyingCards from "./pages/BuyingCards/";
+import './scss/custom.scss';
 
 const App = () => {
   return (
-    <div className="App">
-		<h1>Game Asisstant</h1>
+    <div className="container">
+		<BuyingCards />
     </div>
   );
 }

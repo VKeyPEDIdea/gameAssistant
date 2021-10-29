@@ -1,0 +1,45 @@
+//Fonts
+$primary-font: 'Montserrat', sans-serif;
+
+// Geometry
+$border-rs: 4px;
+
+// Animation
+$st-trans: all .25s ease-in-out;
+
+// Colors
+$white: #ffffff;
+$black: #000000;
+$grey: #808080;
+$pelati: #fd373b;
+$starfleet-blue: #0090ff;
+$drunken-dragonfly: #3ad581;
+$tropical-light: #93db72;
+$wasabi-paste: #cddf72;
+$birds-child: #fce181;
+$sun-surprise: #fff0a1;
+$swedish-yellow: #fff3cc;
+$beaming-sun: #fff8e0;
+$vanilla-frost: #fceac4;
+$peach-crayon: #fec9a8;
+$ruddy-brown: #B8612C;
+$coconut: #95583c;
+$searing-gorge-brown: #6c391a;
+$guacamole: #99996b;
+$wine-yellow: #d9c682;
+$hampton: #e6d6a1;
+
+// Background colors
+$body: $beaming-sun;
+$surface: $vanilla-frost;
+$dark: $searing-gorge-brown;
+$dark-light: $coconut;
+$disabled: $vanilla-frost;
+
+// Text colors
+$on-body: $black;
+$on-dark: $swedish-yellow;
+$on-disabled: $ruddy-brown;
+
+// Grid
+$grid-gap-width: 20px

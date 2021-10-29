@@ -8,7 +8,7 @@
 
 ::selection {
 	// background-color: $primary;
-	color: $body;
+	color: $color-body;
 }
 
 html, body {
@@ -16,14 +16,14 @@ html, body {
 }
 
 body {
-	background-color: $body;
+	background-color: $color-body;
 	font-size: 15px;
 	min-width: 320px;
 	position: relative;
 	line-height: 1.5;
 	font-family: $primary-font;
 	overflow-x: hidden;
-	color: $on-body;
+	color: $color-on-body;
 	box-sizing: border-box;
 
 	input, textarea {

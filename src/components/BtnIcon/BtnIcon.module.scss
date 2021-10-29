@@ -1,0 +1,12 @@
+@import '../../scss/vars';
+
+.btnIcon {
+	display: inline-block;
+	padding: 8px;
+	border-radius: 8px;
+	background-color: $color-searing-gorge-brown;
+
+	> img {
+		display: block;
+	}
+}

@@ -1,9 +1,10 @@
 import React from "react";
+import Header from "../../features/match/Header";
 
 const BuyingCards = () => {
 	return (
 		<>
-			<h1>Покупка карточек</h1>
+			<Header />
 		</>
 	);
 };

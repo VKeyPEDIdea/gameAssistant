@@ -1,10 +1,14 @@
 import React from "react";
-import Header from "../../features/match/Header";
+import Header from "../../components/Header/";
 
 const BuyingCards = () => {
 	return (
 		<>
-			<Header />
+			<Header isPlay={true}
+				stage={5}
+				roundCount={3}
+				roundCurrent={2}
+				duration='00:01:23'/>
 		</>
 	);
 };

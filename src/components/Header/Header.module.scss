@@ -1,0 +1,45 @@
+@import '/src/scss/vars';
+
+.header {
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $color-dark-light;
+	margin: 0 5px;
+	border-radius: 0 0 12px 12px;
+	border: 3px solid $color-dark;
+	border-top: 0;
+	padding: 8px 8px 8px 12px;
+	color: $color-on-dark;
+	box-shadow: 0px 8px 6px 0px rgba($color-dark, 0.24);
+}
+
+.match {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.stage, .round {
+	margin: 0;
+	line-height: 20px;
+}
+
+.stage {
+	margin-bottom: 2px;
+}
+
+.duration {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 28px;
+	margin: 0 0 0 8px;
+}
+
+.controls {
+	display: flex;
+}
+
+.stop {
+	margin-right: 8px;
+}

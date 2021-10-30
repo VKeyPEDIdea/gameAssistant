@@ -30,6 +30,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -534,6 +535,22 @@ module.exports = function (webpackEnv) {
                 'sass-loader'
               ),
             },
+			{
+				test: /\.svg$/i,
+				// from all svg images
+				// include only sprite image
+				include: /.*_sprite\.svg/,
+				use: [
+					{
+						loader: 'svg-sprite-loader',
+                        options: {
+                            symbolId: 'icon-[name]',
+                            extract: true,
+							publicPath: '',
+                        },
+					},
+				],
+			},
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.
@@ -736,6 +753,16 @@ module.exports = function (webpackEnv) {
               }),
             },
           },
+        }),
+		new SpriteLoaderPlugin({
+            plainSprite: true,
+            spriteAttrs: {
+                width: '0',
+                height: '0',
+                focusable: 'false',
+                'aria-hidden': 'true',
+                class: 'visually-hidden',
+            },
         }),
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.

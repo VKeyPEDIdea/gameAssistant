@@ -1,22 +1,23 @@
 import React from "react";
 import classes from './BtnIcon.module.scss';
 
-interface BtnIconDefinition {
-	data: {
-		iconName: string;
-	}
+type IconName = 'stop' | 'pause' | 'play' | 'minus' | 'plus';
+
+interface BtnIconProps {
+	iconName: IconName;
 };
 
 const BtnIcon = ({
-	data: {
-		iconName,
-	}
-}: BtnIconDefinition) => {
+	iconName,
+}: BtnIconProps) => {
 	return (
 		<>
-			<div className={classes.btnIcon}>
-				<img src={`/assets/images/icon-${iconName}.svg`} />
-			</div>
+			<button type='button' className={classes.btnIcon} >
+				<svg>
+					<use xlinkHref="#icon-logo-grey"></use>
+				</svg>
+				{/* <img src={`/assets/images/icon-${iconName}.svg`} /> */}
+			</button>
 		</>
 	);
 };

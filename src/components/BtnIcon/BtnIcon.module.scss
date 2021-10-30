@@ -5,8 +5,12 @@
 	padding: 8px;
 	border-radius: 8px;
 	background-color: $color-searing-gorge-brown;
+	cursor: pointer;
+	margin: 0;
+	border: none;
 
 	> img {
 		display: block;
+		fill: $color-swedish-yellow;
 	}
 }

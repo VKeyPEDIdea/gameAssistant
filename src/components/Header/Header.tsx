@@ -21,13 +21,16 @@ const Header = ({
 	pauseClick,
 	stopClick,
 }: HeaderProps) => {
+
 	return (
 		<div className={classes.header}>
 			<div className={classes.match}>
 				<p className={classes.stage}>{stage} партия</p>
 				<p className={classes.round}>{roundCurrent}/{roundCount} раунд</p>
 			</div>
-			<p className={classes.duration}>{duration}</p>
+			<div className={classes['duration-box']}>
+				<p className={classes.duration}>{duration}</p>
+			</div>
 			<div className={classes.controls}>
 				<div className={classes.stop}>
 					<BtnIcon iconName='stop'

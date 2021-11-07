@@ -1,28 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header/";
-import { selectMatchPause, switchPause } from "../../features/match/matchSlice";
+import {
+	selectMatchDuration,
+	selectMatchPause,
+	initMatch,
+	setBreak,
+} from "../../features/match/matchSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
 const BuyingCards = () => {
 	const dispatch = useAppDispatch();
-	const isPlay = useAppSelector(selectMatchPause);
+	const isPause = useAppSelector(selectMatchPause);
+	const duration = useAppSelector(selectMatchDuration);
 	const onPauseClick = () => {
-		dispatch(switchPause());
+		dispatch(setBreak());
 	};
 
 	const onStopClick = () => {
 		console.log('stop');
 	};
 
+	useEffect(() => {
+		dispatch(initMatch());
+	}, [])
+
 	return (
 		<>
-			<Header isPlay={isPlay}
+			<Header isPlay={!isPause}
 				pauseClick={onPauseClick}
 				stopClick={onStopClick}
 				stage={5}
 				roundCount={3}
 				roundCurrent={2}
-				duration='00:01:23'/>
+				duration={duration}/>
 		</>
 	);
 };

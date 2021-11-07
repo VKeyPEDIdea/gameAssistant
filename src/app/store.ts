@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import playerReducer from '../features/Player/playerSlice';
-import matchSlice from '../features/match/matchSlice';
+import matchReducer from '../features/match/matchSlice';
 
-const store = configureStore({
+export const store = configureStore({
 	reducer: {
 		player: playerReducer,
-		match: matchSlice,
+		match: matchReducer,
 	}
 });
 

@@ -29,16 +29,24 @@ export const matchSlice = createSlice({
 	name: 'match',
 	initialState,
 	reducers: {
-		increaseBank: ({ bank }, action: PayloadAction<number>) => {
-			bank += action.payload;
+		increaseBank: (state, action: PayloadAction<number>) => {
+			state.bank += action.payload;
 		},
-		decreaseBank: ({ bank }, action: PayloadAction<number>) => {
-			bank -= action.payload;
-		}
+		decreaseBank: (state, action: PayloadAction<number>) => {
+			state.bank -= action.payload;
+		},
+		switchPause: state => {
+			state.pause = !state.pause;
+		},
 	}
 });
 
-export const { increaseBank, decreaseBank } = matchSlice.actions;
+export const {
+	increaseBank,
+	decreaseBank,
+	switchPause,
+} = matchSlice.actions;
 export const selectMatchBank = (state: RootState) => state.match.bank;
+export const selectMatchPause = (state: RootState) => state.match.pause;
 
 export default matchSlice.reducer;

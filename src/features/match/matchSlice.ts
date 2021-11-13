@@ -15,8 +15,8 @@ interface MatchState {
 
 const initialState: MatchState = {
 	bank: 0,
-	round: 0,
-	stage: 0,
+	round: 1,
+	stage: 1,
 	duration: {
 		hrs: 0,
 		min: 0,
@@ -81,6 +81,8 @@ export const {
 	stopTimer,
 } = matchSlice.actions;
 export const selectMatchBank = (state: RootState) => state.match.bank;
+export const selectMatchRound = (state: RootState) => state.match.round;
+export const selectMatchStage = (state: RootState) => state.match.stage;
 export const selectMatchPause = (state: RootState) => state.match.pause;
 export const selectMatchHrs = (state: RootState) => state.match.duration.hrs;
 export const selectMatchMin = (state: RootState) => state.match.duration.min;

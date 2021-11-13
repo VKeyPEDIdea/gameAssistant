@@ -5,6 +5,8 @@ import {
 	selectMatchPause,
 	initMatch,
 	setBreak,
+	selectMatchStage,
+	selectMatchRound,
 } from "../../features/match/matchSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
@@ -12,6 +14,8 @@ const BuyingCards = () => {
 	const dispatch = useAppDispatch();
 	const isPause = useAppSelector(selectMatchPause);
 	const duration = useAppSelector(selectMatchDuration);
+	const stage = useAppSelector(selectMatchStage);
+	const round = useAppSelector(selectMatchRound);
 	const onPauseClick = () => {
 		dispatch(setBreak());
 	};
@@ -29,9 +33,9 @@ const BuyingCards = () => {
 			<Header isPlay={!isPause}
 				pauseClick={onPauseClick}
 				stopClick={onStopClick}
-				stage={5}
+				stage={stage}
 				roundCount={3}
-				roundCurrent={2}
+				roundCurrent={round}
 				duration={duration}/>
 		</>
 	);

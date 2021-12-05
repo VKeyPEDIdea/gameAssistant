@@ -14,19 +14,27 @@ const PlayerItem = ({
 }: PlayerItemProps) => {
 	let playcardList = [];
 	for (let i = 0; i < playcardCount; i++) {
-		playcardList.push(<div className={classes.playcard}></div>)
+		playcardList.push(<div key={i + name + ' playcard'}
+			className={classes.playcard}></div>)
 	}
 
 	return (
 		<div className={classes.player}>
-			<p className={classes.score}>+{score}</p>
+			<p className={`${classes.score} ${(score < 0)
+				? classes['score--negative']
+				: classes['score--positive']}`}
+			>
+				+{score}
+			</p>
 			<div className={classes.wrapper}>
 				<p className={classes.name}>{name}</p>
 				<div className={classes['playcard-list']}>
 					{playcardList}
 				</div>
 			</div>
-			<Counter />
+			<Counter count={3}
+				minusClick={() => console.log('minus')}
+				plusClick={() => console.log('plus')}/>
 		</div>
 	);
 };

@@ -1,0 +1,15 @@
+@import '../../scss/vars';
+
+.counter {
+	display: flex;
+	align-items: center;
+}
+
+.count {
+	min-width: 34px;
+	color: $color-on-light;
+	margin: 0 8px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+}

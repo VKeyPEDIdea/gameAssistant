@@ -8,9 +8,17 @@
 	cursor: pointer;
 	margin: 0;
 	border: none;
-
+	
 	> img {
 		display: block;
 		fill: $color-swedish-yellow;
 	}
+}
+
+.dark {
+	background-color: $color-searing-gorge-brown;
+}
+
+.light {
+	background-color: $color-peach-crayon;
 }

@@ -34,10 +34,12 @@ const Header = ({
 			<div className={classes.controls}>
 				<div className={classes.stop}>
 					<BtnIcon iconName='stop'
+						theme='dark'
 						click={stopClick}/>
 				</div>
 				<div className={classes.pause}>
 					<BtnIcon iconName={isPlay ? 'pause' : 'play'}
+						theme='dark'
 						click={pauseClick}/>
 				</div>
 			</div>

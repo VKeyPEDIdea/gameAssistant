@@ -1,0 +1,49 @@
+@import '../../../scss/vars';
+
+.player {
+	display: flex;
+	align-items: center;
+	background-color: $color-vanilla-frost;
+	padding: 6px 10px;
+}
+
+.score {
+	margin-right: 12px;
+	margin-bottom: 0;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+	width: 42px;
+	text-align: right;
+	&--positive {
+		color: $color-drunken-dragonfly;
+	}
+
+	&--negative {
+		color: $color-pelati;
+	}
+}
+
+.wrapper {
+	flex-grow: 1;
+}
+
+.name {
+	margin-bottom: 4px;
+	color: $color-on-light;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+}
+
+.playcard {
+	width: 36px;
+	height: 18px;
+	background-color: $color-peach-bloom;
+	border-radius: 2px;
+	margin-right: 6px;
+}
+
+.playcard-list {
+	display: flex;
+}

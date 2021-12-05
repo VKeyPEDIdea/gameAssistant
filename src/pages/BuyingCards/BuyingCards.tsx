@@ -9,6 +9,7 @@ import {
 	selectMatchRound,
 } from "../../features/match/matchSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import PlayerList from "../../components/PlayerList/";
 import classes from './BuyingCards.module.scss';
 
 const BuyingCards = () => {
@@ -39,6 +40,7 @@ const BuyingCards = () => {
 				roundCurrent={round}
 				duration={duration}/>
 			<h1 className={classes.header}>Покупка карточек</h1>
+			<PlayerList />
 		</>
 	);
 };

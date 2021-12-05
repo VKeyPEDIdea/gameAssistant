@@ -45,7 +45,6 @@ export const matchSlice = createSlice({
 		},
 		setTimer: (state, action: PayloadAction<NodeJS.Timeout>) => {
 			state.timer = action.payload;
-			console.log(state.timer);
 		},
 		stopTimer: state => {
 			(typeof state.timer !== 'number') ? clearTimeout(state.timer) : null;
@@ -92,7 +91,6 @@ export const selectMatchDuration = (state: RootState) => {
 
 export const setBreak = () => (dispatch: AppDispatch, getState: any) => {
 	dispatch(switchPause());
-	console.log(getState());
 	const { pause, timer } = getState().match;
 	if (pause) {
 		clearTimeout(timer);

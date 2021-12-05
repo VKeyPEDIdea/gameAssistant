@@ -9,6 +9,7 @@ import {
 	selectMatchRound,
 } from "../../features/match/matchSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import classes from './BuyingCards.module.scss';
 
 const BuyingCards = () => {
 	const dispatch = useAppDispatch();
@@ -37,6 +38,7 @@ const BuyingCards = () => {
 				roundCount={3}
 				roundCurrent={round}
 				duration={duration}/>
+			<h1 className={classes.header}>Покупка карточек</h1>
 		</>
 	);
 };

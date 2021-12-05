@@ -54,8 +54,7 @@ export const matchSlice = createSlice({
 			state.duration.sec = 0;
 		},
 		tickTock: state => {
-			let { hrs, min, sec } = state.duration;
-			console.log(hrs + ':' + min + ':' + sec);
+			let { min, sec } = state.duration;
 			state.duration.sec += 1;
 			
 			if (sec >= 59) {

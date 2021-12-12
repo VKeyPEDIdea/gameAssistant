@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Header from "../../components/Header/";
 import {
 	selectMatchDuration,
@@ -7,6 +7,7 @@ import {
 	setBreak,
 	selectMatchStage,
 	selectMatchRound,
+	selectPlayerList,
 } from "../../features/match/matchSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import PlayerList from "../../components/PlayerList/";
@@ -18,6 +19,7 @@ const BuyingCards = () => {
 	const duration = useAppSelector(selectMatchDuration);
 	const stage = useAppSelector(selectMatchStage);
 	const round = useAppSelector(selectMatchRound);
+	const playerList = useAppSelector(selectPlayerList);
 	const onPauseClick = () => {
 		dispatch(setBreak());
 	};
@@ -40,7 +42,7 @@ const BuyingCards = () => {
 				roundCurrent={round}
 				duration={duration}/>
 			<h1 className={classes.header}>Покупка карточек</h1>
-			<PlayerList />
+			<PlayerList list={playerList}/>
 		</>
 	);
 };

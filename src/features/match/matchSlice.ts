@@ -13,6 +13,8 @@ interface MatchState {
 	playerList: Player[];
 }
 
+const cardPrice = 200;
+
 const initialState: MatchState = {
 	bank: 0,
 	round: 1,
@@ -24,7 +26,20 @@ const initialState: MatchState = {
 	},
 	timer: 0,
 	pause: true,
-	playerList: [],
+	playerList: [
+		{
+			id: 0,
+			name: 'Регина',
+			score: 0,
+			cardsCount: 0,
+		},
+		{
+			id: 1,
+			name: 'Паша',
+			score: 0,
+			cardsCount: 0,
+		},
+	],
 };
 
 export const matchSlice = createSlice({
@@ -34,11 +49,21 @@ export const matchSlice = createSlice({
 		startMatch: state => {
 			state.pause = false;
 		},
-		increaseBank: (state, action: PayloadAction<number>) => {
-			state.bank += action.payload;
+		addCardToPlayer: (state, action: PayloadAction<number>) => {
+			state.bank += cardPrice;
+			const item = state.playerList.find(({ id }) => id === action.payload);
+			if (item) {
+				item.cardsCount += 1;
+				item.score -= cardPrice;
+			};
 		},
-		decreaseBank: (state, action: PayloadAction<number>) => {
-			state.bank -= action.payload;
+		removeCardToPlayer: (state, action: PayloadAction<number>) => {
+			const item = state.playerList.find(({ id }) => id === action.payload);
+			if (item && item.cardsCount > 0) {
+				state.bank -= cardPrice;
+				item.cardsCount -= 1;
+				item.score += cardPrice;
+			};
 		},
 		switchPause: state => {
 			state.pause = !state.pause;
@@ -70,8 +95,8 @@ export const matchSlice = createSlice({
 });
 
 export const {
-	increaseBank,
-	decreaseBank,
+	addCardToPlayer,
+	removeCardToPlayer,
 	startMatch,
 	switchPause,
 	tickTock,
@@ -88,6 +113,7 @@ export const selectMatchSec = (state: RootState) => state.match.duration.sec;
 export const selectMatchDuration = (state: RootState) => {
 	return getNormalizedDuration(state.match.duration);
 };
+export const selectPlayerList = (state: RootState) => state.match.playerList;
 
 export const setBreak = () => (dispatch: AppDispatch, getState: any) => {
 	dispatch(switchPause());

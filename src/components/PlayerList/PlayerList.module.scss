@@ -36,3 +36,11 @@
 	background-color: $color-peach-crayon;
 	padding: 8px 0;
 }
+
+.item {
+	margin-bottom: 8px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
